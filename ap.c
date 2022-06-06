@@ -58,7 +58,7 @@ int xradio_sta_add(struct ieee80211_hw *hw, struct ieee80211_vif *vif,
 
 	sta_priv->priv = priv;
 	sta_priv->link_id = xradio_find_link_id(priv, sta->addr);
-	if (WARN_ON(!sta_priv->link_id)) {
+	if (!sta_priv->link_id) {
 		/* Impossible error */
 		wiphy_debug(hw->wiphy, "No more link IDs available.\n");
 		return -ENOENT;

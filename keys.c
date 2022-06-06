@@ -125,8 +125,8 @@ int xradio_set_key(struct ieee80211_hw *dev, enum set_key_cmd cmd,
 				wsm_key->type = WSM_KEY_TYPE_AES_PAIRWISE;
 				memcpy(wsm_key->aesPairwiseKey.peerAddress, peer_addr, ETH_ALEN);
 				memcpy(wsm_key->aesPairwiseKey.aesKeyData, &key->key[0], 16);
-				wiphy_debug(dev->wiphy, "CCMP_PAIRWISE keylen=%d!\n",
-						key->keylen);
+				// wiphy_debug(dev->wiphy, "CCMP_PAIRWISE keylen=%d!\n",
+				// 		key->keylen);
 			} else {
 				wsm_key->type = WSM_KEY_TYPE_AES_GROUP;
 				memcpy(wsm_key->aesGroupKey.aesKeyData, &key->key[0], 16);

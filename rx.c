@@ -181,7 +181,7 @@ void xradio_rx_cb(struct xradio_vif *priv,
 			            priv->if_id);
 			hdr->flag |= RX_FLAG_MMIC_ERROR;
 		} else if (arg->status == WSM_STATUS_NO_KEY_FOUND) {
-			dev_warn(priv->hw_priv->pdev, "received frame has no key status\n");
+			// dev_warn(priv->hw_priv->pdev, "received frame has no key status\n");
 			//goto drop;
 		} else {
 			dev_err(priv->hw_priv->pdev, "[RX] IF=%d, Receive failure: %d.\n",
@@ -394,7 +394,7 @@ void xradio_rx_cb(struct xradio_vif *priv,
 		/* Double-check status with lock held */
 		if (entry->status == XRADIO_LINK_SOFT) {
 			skb_queue_tail(&entry->rx_queue, skb);
-			dev_warn(priv->hw_priv->pdev, "***skb_queue_tail\n");
+			// dev_warn(priv->hw_priv->pdev, "***skb_queue_tail\n");
 		} else
 			ieee80211_rx_irqsafe(priv->hw, skb);
 		spin_unlock_bh(&priv->ps_state_lock);
@@ -406,6 +406,6 @@ void xradio_rx_cb(struct xradio_vif *priv,
 	return;
 
 drop:
-	dev_warn(priv->hw_priv->pdev, "dropped received frame\n");
+	// dev_warn(priv->hw_priv->pdev, "dropped received frame\n");
 	return;
 }

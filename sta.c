@@ -672,7 +672,7 @@ int xradio_conf_tx(struct ieee80211_hw *dev, struct ieee80211_vif *vif,
 	/* To prevent re-applying PM request OID again and again*/
 	bool old_uapsdFlags;
 
-	wiphy_debug(dev->wiphy, "vif %d, configuring tx\n", priv->if_id);
+	// wiphy_debug(dev->wiphy, "vif %d, configuring tx\n", priv->if_id);
 
 	if (WARN_ON(!priv))
 		return -EOPNOTSUPP;
